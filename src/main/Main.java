@@ -1,4 +1,4 @@
-package View;
+package main;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import test.TestWeb;
+
  
 public class Main {
  
