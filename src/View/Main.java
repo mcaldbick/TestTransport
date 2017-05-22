@@ -35,6 +35,7 @@ public class Main {
             		
             		try {
 						TestWeb.testWeb(text1.getText());
+						System.exit(0);
 					} catch (InterruptedException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
