@@ -12,53 +12,47 @@ import javax.swing.JTextField;
 
 import test.TestWeb;
 
- 
 public class Main {
- 
-    public void createUI() {
-    	final JTextField  text1 = new JTextField(30);
-        JFrame frame = new JFrame("Test Transport Website");
-        
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        frame.setLayout(new FlowLayout());
-        
-        JLabel label = new JLabel("Location of IEDriverServer.exe");
-        
-        JButton button = new JButton("Submit");
-        button.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
-                //proceed();
-            	String textFieldValue = text1.getText();
-            	if(!(text1.getText().equals(""))){
-            		System.out.println(text1.getText());
-            		
-            		try {
-						TestWeb.testWeb(text1.getText());
-						System.exit(0);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-            		
-            	}else{
-            		JOptionPane.showMessageDialog(null, "IEDriverServer location must not be empty.", "Error", JOptionPane.ERROR_MESSAGE);
-            	}
-            	 
-            }
-        });
-        frame.add(label);
-        frame.add(text1);
-        frame.add(button);        
-        frame.pack();        
-        frame.setVisible(true);
-        frame.setSize(400, 200);
-    }
- 
-    public static void main(String[] args) {
-        Main se = new Main();
-        se.createUI();
-    }
-   
+	public void createUI() {
+		final JTextField text1 = new JTextField(30);
+		JFrame frame = new JFrame("Test Transport Website");
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		frame.setLayout(new FlowLayout());
+
+		JLabel label = new JLabel("Location of ChromeDriver.exe");
+
+		JButton button = new JButton("Submit");
+		button.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				if (!(text1.getText().equals(""))) {
+					System.out.println(text1.getText());
+
+					TestWeb.testWeb(text1.getText());
+					System.exit(0);
+
+				} else {
+					JOptionPane.showMessageDialog(null,
+							"IEDriverServer location must not be empty.",
+							"Error", JOptionPane.ERROR_MESSAGE);
+				}
+
+			}
+		});
+		frame.add(label);
+		frame.add(text1);
+		frame.add(button);
+		frame.pack();
+		frame.setVisible(true);
+		frame.setSize(400, 200);
+	}
+
+	public static void main(String[] args) {
+		Main se = new Main();
+		se.createUI();
+	}
+
 }
